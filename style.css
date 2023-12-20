@@ -1,0 +1,14 @@
+@font-face{
+    font-family: 'Poppins';
+    src: url('assets/fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;   
+}
+
+:root{
+    --branco: #ffffff;
+    --quase__branco: #f0f0f0;
+    --cinza__claro: #dbdbdb;
+    --cinza__esfumacado: #716f6f;
+    --quase__preto: #141414;
+}
