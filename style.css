@@ -12,3 +12,20 @@
     --cinza__esfumacado: #716f6f;
     --quase__preto: #141414;
 }
+
+body{
+    width: 100%;
+    background-color: var(--cinza__claro);
+    font-family: 'Poppins', sans-serif;
+}
+
+.container__principal{
+    width: 95%;
+    background-color: var(--branco);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px 15px 60px 15px;
+}
+
