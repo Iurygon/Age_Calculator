@@ -19,7 +19,7 @@ body{
 }
 
 .container__principal{
-    width: 95%;
+    width: 80%;
     background-color: var(--branco);
     position: absolute;
     top: 50%;
@@ -33,3 +33,15 @@ body{
     justify-content: space-evenly;
     align-items: center;
 }
+
+.input__label{
+    font-size: 18px;
+}
+
+.inputs{
+    width: 80px;
+    border-radius: 5px;
+    padding: 3px 0;
+    font-size: 23px;
+}
+
