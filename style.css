@@ -1,16 +1,10 @@
-@font-face{
-    font-family: 'Poppins';
-    src: url('assets/fonts/Poppins-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;   
-}
-
 :root{
     --branco: #ffffff;
     --quase__branco: #f0f0f0;
     --cinza__claro: #dbdbdb;
     --cinza__esfumacado: #716f6f;
     --quase__preto: #141414;
+    --roxo: #854dff;
 }
 
 body{
@@ -35,7 +29,7 @@ body{
 }
 
 .form__label{
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     color: var(--cinza__esfumacado);
 }
@@ -45,7 +39,7 @@ body{
     border: 1px solid var(--cinza__esfumacado);
     border-radius: 5px;
     padding: 5px 0;
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
     color: var(--quase__preto);
     font-weight: 700;
@@ -54,4 +48,12 @@ body{
 
 .resultados{
     text-align: center;
+    color: var(--quase__preto);
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.resultado__mostrador{
+    color: var(--roxo);
+    font-size: 35px;
 }
