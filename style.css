@@ -45,11 +45,11 @@ body{
     text-align: center;
     color: var(--quase__preto);
     font-weight: 700;
-    font-family: 'Poppins'
 }
 
 .inputs::placeholder{
-    
+    font-size: 20px;
+    font-family: 'Arial';
 }
 
 .divisao__conteudo{
