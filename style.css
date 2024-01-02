@@ -5,6 +5,7 @@
     --cinza__esfumacado: #716f6f;
     --quase__preto: #141414;
     --roxo: #854dff;
+    --vermelho__claro: #ff5757;
 }
 
 body{
@@ -52,6 +53,15 @@ body{
     font-family: 'Arial';
 }
 
+.inputs:focus{
+    border: 2px solid var(--roxo);
+    outline: 0;
+}
+
+.inputs::-webkit-inner-spin-button{
+    display: none;
+}
+
 .divisao__conteudo{
     display: inline;
     position: relative;
@@ -70,6 +80,10 @@ body{
     position: absolute;
     left: calc(50% - 30px);
     bottom: calc(50% - 27px);
+}
+
+.divisao__imagem_resultado:active{
+    background-color: var(--quase__preto);
 }
 
 .resultados{
