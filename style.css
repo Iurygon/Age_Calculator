@@ -62,6 +62,16 @@ body{
     display: none;
 }
 
+.input__erro_falta, .input__erro_invalido{
+    font-size: 14px;
+    color: var(--vermelho__claro);
+    margin-top: 10px;
+}
+
+.input__erro_invalido, .input__erro_falta{
+    display: none;
+}
+
 .divisao__conteudo{
     display: inline;
     position: relative;
