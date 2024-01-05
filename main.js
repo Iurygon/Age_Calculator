@@ -38,3 +38,23 @@ imgResult.addEventListener('click', () =>{
         resultados[2].textContent = dia; //TESTE
     }
 });
+
+function zeraResultados(){
+
+}
+
+function mostraErroInvalido(){
+
+}
+
+function mostraErroNecessario(){
+
+}
+
+function removeErroInvalido(){
+
+}
+
+function removeErroNecessario(){
+
+}
