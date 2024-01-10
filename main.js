@@ -37,22 +37,29 @@ function removeEstiloErro(){ //CHAMADO AO CLICAR NO BOTÃO PARA REMOVER O ESTILO
     };
 };
 
-function mostraErroInvalido(indErro){
-    
-};
+function verificaErro(){
+    for(let idxInput = 0; idxInput < inputsData.length; idxInput++){
+        if(idxInput === 0){ //VERIFICAÇÃO DO DIA
+            if(inputsData[0].value < 0 || inputsData[0].value > 31){
 
-function mostraErroNecessario(){
+            }
+        }
+        else if(idxInput === 1){ //VERIFICAÇÃO DO MES
 
-};
+        }
+        else{ //VERIFICAÇÃO DO ANO
 
-function removeErroInvalido(){ //CHAMADO AO CLICAR NO BOTÃO PARA REMOVER AS MENSAGENS DE ERRO POR INVALIDEZ
-    for(let i = 0; i < erroInvalido.length; i++){
-        erroInvalido[i].style.display = 'none';
+        };
     };
 };
 
-function removeErroNecessario(){ //CHAMADO AO CLICAR NO BOTÃO PARA REMOVER AS MENSAGENS DE ERRO POR FALTA DE DADOS
-    for(let i = 0; i < erroFalta.length; i++){
+function mostraErri(idxErro){
+    
+};
+
+function removeErro(){ //CHAMADO AO CLICAR NO BOTÃO PARA REMOVER AS MENSAGENS DE ERRO POR INVALIDEZ
+    for(let i = 0; i < inputsData.length; i++){
+        erroInvalido[i].style.display = 'none';
         erroFalta[i].style.display = 'none';
     };
 };
