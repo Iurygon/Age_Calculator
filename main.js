@@ -40,20 +40,33 @@ function removeEstiloErro(){ //CHAMADO AO CLICAR NO BOTÃO PARA REMOVER O ESTILO
 function verificaErro(){
     for(let idxInput = 0; idxInput < inputsData.length; idxInput++){
         if(idxInput === 0){ //VERIFICAÇÃO DO DIA
-            if(inputsData[0].value < 0 || inputsData[0].value > 31){
+            if(inputsData[0].value < 0 || inputsData[0].value > 31){ //ERRO DE INVALIDEZ
 
             }
-        }
-        else if(idxInput === 1){ //VERIFICAÇÃO DO MES
+            else if(inputsData[0].value === 0){ //ERRO POR FALTA DE VALOR
 
-        }
-        else{ //VERIFICAÇÃO DO ANO
+            };
+        };
+        if(idxInput === 1){ //VERIFICAÇÃO DO MES
+            if(inputsData[1].value < 0 || inputsData[1].value > 12){ //ERRO DE INVALIDEZ
 
+            }
+            else if(inputsData[1].value === 0){ //ERRO POR FALTA DE VALOR
+
+            };
+        };
+        if(idxInput === 2){ //VERIFICAÇÃO DO ANO
+            if(inputsData[2].value < 0){ //ERRO DE INVALIDEZ        ADICIONAR UMA VERIFICICAÇÃO PARA O ANO NÃO SER MAIOR DO  
+
+            }
+            else if(inputsData[2].value === 0){
+
+            };
         };
     };
 };
 
-function mostraErri(idxErro){
+function mostraErro(tpErro, idxErro){
     
 };
 
