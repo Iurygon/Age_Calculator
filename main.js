@@ -3,7 +3,8 @@ let inputsData = document.querySelectorAll('.inputs');
 let inputsLabel = document.querySelectorAll('.form__label');
 /*ERROS (0 - DIA, 1 - MES, 2 - ANO)*/
 const erroFalta = document.querySelectorAll('.input__erro_falta'); 
-const erroInvalido = document.querySelectorAll('.input__erro_invalido'); 
+const erroInvalido = document.querySelectorAll('.input__erro_invalido');
+const erroDtInexistente = document.querySelector('.input__erro_inexistente');
 /*IMAGEM*/
 const imgResult = document.querySelector('.divisao__imagem_resultado');
 /*MOSTRADOR RESULTADOS (0 - DIA, 1 - MES, 2 - ANO)*/
@@ -19,58 +20,67 @@ imgResult.addEventListener('click', () =>{
 
 });
 
-function zeraResultados(){ //CHAMADO AO CLICAR NO BOTÃO PARA ZERAR OS VALORES E AO TER ALGUM ERRO PARA TRAVAR OS VALORES
+function zeraResultados(){ //CHAMADA AO CLICAR NO BOTÃO PARA ZERAR OS VALORES E AO TER ALGUM ERRO PARA TRAVAR OS VALORES
     for(let i = 0; i < resultados.length; i++){
         resultados[i].textContent = '--';
     };
 };
 
-function estiloErro(){ //CHAMADO SEMPRE QUE HOUVER UM ERRO PARA ESTILIZAR COM O PADRÃO DE ERRO TODOS OS ELEMENTOS
+function estiloErro(){ //CHAMADA SEMPRE QUE HOUVER UM ERRO PARA ESTILIZAR COM O PADRÃO DE ERRO TODOS OS ELEMENTOS
     for(let i = 0; i < inputsData.length; i++){
         inputsData[i].classList.add = 'erro';
     };
 };
 
-function removeEstiloErro(){ //CHAMADO AO CLICAR NO BOTÃO PARA REMOVER O ESTILO DE ERRO DOS INPUTS
+function removeEstiloErro(){ //CHAMADA AO CLICAR NO BOTÃO PARA REMOVER O ESTILO DE ERRO DOS INPUTS
     for(let i = 0; i < inputsData.length; i++){
         inputsData[i].classList.remove = 'erro'
     };
 };
 
-function verificaErro(){
+function verificaErro(){ //CHAMADA AO CLICAR NO BOTÃO PARA VERIFICAR SE HÁ ALGUM ERRO
     for(let idxInput = 0; idxInput < inputsData.length; idxInput++){
         if(idxInput === 0){ //VERIFICAÇÃO DO DIA
             if(inputsData[0].value < 0 || inputsData[0].value > 31){ //ERRO DE INVALIDEZ
-
+                mostraErro(2, 0);
             }
             else if(inputsData[0].value === 0){ //ERRO POR FALTA DE VALOR
-
+                mostraErro(1, 0);
             };
         };
         if(idxInput === 1){ //VERIFICAÇÃO DO MES
             if(inputsData[1].value < 0 || inputsData[1].value > 12){ //ERRO DE INVALIDEZ
-
+                mostraErro(2, 1);
             }
             else if(inputsData[1].value === 0){ //ERRO POR FALTA DE VALOR
-
+                mostraErro(1, 1);
             };
         };
         if(idxInput === 2){ //VERIFICAÇÃO DO ANO
-            if(inputsData[2].value < 0){ //ERRO DE INVALIDEZ        ADICIONAR UMA VERIFICICAÇÃO PARA O ANO NÃO SER MAIOR DO  
-
+            if(inputsData[2].value < 0){ //ERRO DE INVALIDEZ        ADICIONAR UMA VERIFICICAÇÃO PARA O ANO NÃO SER MAIOR DO O ANO ATUAL
+                mostraErro(2, 2);
             }
             else if(inputsData[2].value === 0){
-
+                mostraErro(1, 2);
             };
         };
     };
 };
 
-function mostraErro(tpErro, idxErro){
-    
+function mostraErro(tpErro, idxErro){ //É CHAMADA NA FUNÇÃO 'verificaErro' PARA APRESENTAR A MENSAGEM DE ERRO CORRESPONDENTE
+    // tpErro = 1 - Falta, 2 - Invalidez, 3 - Data inexistente
+    if(tpErro === 1){
+        erroFalta[idxErro].style.display = 'block';
+    }
+    else if(tpErro === 2){
+        erroInvalido[idxErro].style.display = 'block';
+    }
+    else{
+        erroDtInexistente.style.display = 'block';
+    };
 };
 
-function removeErro(){ //CHAMADO AO CLICAR NO BOTÃO PARA REMOVER AS MENSAGENS DE ERRO POR INVALIDEZ
+function removeErro(){ //CHAMADA AO CLICAR NO BOTÃO PARA REMOVER AS MENSAGENS DE ERRO POR INVALIDEZ
     for(let i = 0; i < inputsData.length; i++){
         erroInvalido[i].style.display = 'none';
         erroFalta[i].style.display = 'none';
