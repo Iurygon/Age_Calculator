@@ -17,6 +17,10 @@ imgResult.addEventListener('click', () =>{
     let dia = inputsData[0].value;
     let mes = inputsData[1].value;
     let ano = inputsData[2].value;
+    /*RESETA A PÁGINA*/
+    zeraResultados();
+    removeEstiloErro();
+    removeErro();
 
 });
 
@@ -43,25 +47,31 @@ function verificaErro(){ //CHAMADA AO CLICAR NO BOTÃO PARA VERIFICAR SE HÁ ALG
         if(idxInput === 0){ //VERIFICAÇÃO DO DIA
             if(inputsData[0].value < 0 || inputsData[0].value > 31){ //ERRO DE INVALIDEZ
                 mostraErro(2, 0);
+                estiloErro();
             }
             else if(inputsData[0].value === 0){ //ERRO POR FALTA DE VALOR
                 mostraErro(1, 0);
+                estiloErro();
             };
         };
         if(idxInput === 1){ //VERIFICAÇÃO DO MES
             if(inputsData[1].value < 0 || inputsData[1].value > 12){ //ERRO DE INVALIDEZ
                 mostraErro(2, 1);
+                estiloErro();
             }
             else if(inputsData[1].value === 0){ //ERRO POR FALTA DE VALOR
                 mostraErro(1, 1);
+                estiloErro();
             };
         };
         if(idxInput === 2){ //VERIFICAÇÃO DO ANO
             if(inputsData[2].value < 0){ //ERRO DE INVALIDEZ        ADICIONAR UMA VERIFICICAÇÃO PARA O ANO NÃO SER MAIOR DO O ANO ATUAL
                 mostraErro(2, 2);
+                estiloErro();
             }
             else if(inputsData[2].value === 0){
                 mostraErro(1, 2);
+                estiloErro();
             };
         };
     };
