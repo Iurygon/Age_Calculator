@@ -77,8 +77,9 @@ function verificaErro(){ //CHAMADA AO CLICAR NO BOTÃO PARA VERIFICAR SE HÁ ALG
     };
 };
 
-function verificaData(){
-    
+function verificaData(dd, mm, aa){
+    let dataAtual = new Date(Date.now());
+    let dtNascimento = new Date(aa, mm, dd)
 }
 
 function mostraErro(tpErro, idxErro){ //É CHAMADA NA FUNÇÃO 'verificaErro' PARA APRESENTAR A MENSAGEM DE ERRO CORRESPONDENTE
