@@ -65,7 +65,7 @@ function verificaErro(){ //CHAMADA AO CLICAR NO BOTÃO PARA VERIFICAR SE HÁ ALG
             };
         };
         if(idxInput === 2){ //VERIFICAÇÃO DO ANO
-            if(inputsData[2].value < 0 || inputsData[2].value < 1900){ //ERRO DE INVALIDEZ        ADICIONAR UMA VERIFICICAÇÃO PARA O ANO NÃO SER MAIOR DO O ANO ATUAL
+            if(inputsData[2].value < 0 || inputsData[2].value < 1900 ){ //ERRO DE INVALIDEZ        ADICIONAR UMA VERIFICICAÇÃO PARA O ANO NÃO SER MAIOR DO O ANO ATUAL
                 mostraErro(2, 2);
                 estiloErro();
             }
@@ -80,6 +80,8 @@ function verificaErro(){ //CHAMADA AO CLICAR NO BOTÃO PARA VERIFICAR SE HÁ ALG
 function verificaData(dd, mm, aa){
     let dataAtual = new Date(Date.now());
     let dtNascimento = new Date(aa, mm, dd)
+    let tempoRestante = dataAtual - dtNascimento;
+    /*ESPECIFICAÇÕES DAS DATAS*/
 }
 
 function mostraErro(tpErro, idxErro){ //É CHAMADA NA FUNÇÃO 'verificaErro' PARA APRESENTAR A MENSAGEM DE ERRO CORRESPONDENTE
