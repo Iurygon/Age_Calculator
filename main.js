@@ -9,7 +9,8 @@ const erroDtInexistente = document.querySelector('.input__erro_inexistente');
 const imgResult = document.querySelector('.divisao__imagem_resultado');
 /*MOSTRADOR RESULTADOS (0 - DIA, 1 - MES, 2 - ANO)*/
 let resultados = document.querySelectorAll('.resultado__mostrador');
-
+/*DATA ATUAL*/
+let dataAtual = new Date(Date.now());
 
 
 imgResult.addEventListener('click', () =>{
@@ -65,7 +66,7 @@ function verificaErro(){ //CHAMADA AO CLICAR NO BOTÃO PARA VERIFICAR SE HÁ ALG
             };
         };
         if(idxInput === 2){ //VERIFICAÇÃO DO ANO
-            if(inputsData[2].value < 0 || inputsData[2].value < 1900 ){ //ERRO DE INVALIDEZ        ADICIONAR UMA VERIFICICAÇÃO PARA O ANO NÃO SER MAIOR DO O ANO ATUAL
+            if(inputsData[2].value < 0 || inputsData[2].value < 1900 || inputsData[2].value > dataAtual.getFullYear()){ //ERRO DE INVALIDEZ
                 mostraErro(2, 2);
                 estiloErro();
             }
@@ -78,10 +79,12 @@ function verificaErro(){ //CHAMADA AO CLICAR NO BOTÃO PARA VERIFICAR SE HÁ ALG
 };
 
 function verificaData(dd, mm, aa){
-    let dataAtual = new Date(Date.now());
     let dtNascimento = new Date(aa, mm, dd)
     let tempoRestante = dataAtual - dtNascimento;
     /*ESPECIFICAÇÕES DAS DATAS*/
+    let resultAno = tempoRestante;
+    let resultMes = tempoRestante;
+    let resultDia = tempoRestante;
 }
 
 function mostraErro(tpErro, idxErro){ //É CHAMADA NA FUNÇÃO 'verificaErro' PARA APRESENTAR A MENSAGEM DE ERRO CORRESPONDENTE
