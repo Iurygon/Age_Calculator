@@ -82,9 +82,9 @@ function verificaData(dd, mm, aa){
     let dtNascimento = new Date(aa, mm, dd);
     let tempoRestante = dataAtual - dtNascimento;
     /*ESPECIFICAÇÕES DAS DATAS*/
-    let resultAno = Math.floor(tempoRestante);
-    let resultMes = Math.floor(tempoRestante);
-    let resultDia = Math.floor(tempoRestante % ( 1000 * 60 * 60 * 24) / ());
+    let resultAno = Math.floor(tempoRestante % ( 1000 * 60 * 60 * 24 * 365));
+    let resultMes = Math.floor(tempoRestante  % ( 1000 * 60 * 60 * 24 * 365) / (1000 * 60 * 60 * 24 * 30.11));
+    let resultDia = Math.floor(tempoRestante % ( 1000 * 60 * 60 * 24 * 30.11) / (1000 * 60 * 60 * 24));
     /*ATRIBUI AS DATAS*/
     resultados[0].innerHTML = resultDia;
     resultados[1].innerHTML = resultMes;
