@@ -22,7 +22,8 @@ imgResult.addEventListener('click', () =>{
     zeraResultados();
     removeEstiloErro();
     removeErro();
-
+    verificaErro();
+    verificaData(dia, mes, ano);
 });
 
 function zeraResultados(){ //CHAMADA AO CLICAR NO BOTÃO PARA ZERAR OS VALORES E AO TER ALGUM ERRO PARA TRAVAR OS VALORES
@@ -31,15 +32,16 @@ function zeraResultados(){ //CHAMADA AO CLICAR NO BOTÃO PARA ZERAR OS VALORES E
     };
 };
 
-function estiloErro(){ //CHAMADA SEMPRE QUE HOUVER UM ERRO PARA ESTILIZAR COM O PADRÃO DE ERRO TODOS OS ELEMENTOS
-    for(let i = 0; i < inputsData.length; i++){
-        inputsData[i].classList.add = 'erro';
-    };
-};
-
 function removeEstiloErro(){ //CHAMADA AO CLICAR NO BOTÃO PARA REMOVER O ESTILO DE ERRO DOS INPUTS
     for(let i = 0; i < inputsData.length; i++){
         inputsData[i].classList.remove = 'erro'
+    };
+};
+
+function removeErro(){ //CHAMADA AO CLICAR NO BOTÃO PARA REMOVER AS MENSAGENS DE ERRO POR INVALIDEZ
+    for(let i = 0; i < inputsData.length; i++){
+        erroInvalido[i].style.display = 'none';
+        erroFalta[i].style.display = 'none';
     };
 };
 
@@ -50,7 +52,7 @@ function verificaErro(){ //CHAMADA AO CLICAR NO BOTÃO PARA VERIFICAR SE HÁ ALG
                 mostraErro(2, 0);
                 estiloErro();
             }
-            else if(inputsData[0].value === 0){ //ERRO POR FALTA DE VALOR
+            else if(inputsData[0].value === 0 || inputsData[0].value === ''){ //ERRO POR FALTA DE VALOR
                 mostraErro(1, 0);
                 estiloErro();
             };
@@ -60,7 +62,7 @@ function verificaErro(){ //CHAMADA AO CLICAR NO BOTÃO PARA VERIFICAR SE HÁ ALG
                 mostraErro(2, 1);
                 estiloErro();
             }
-            else if(inputsData[1].value === 0){ //ERRO POR FALTA DE VALOR
+            else if(inputsData[1].value === 0 || inputsData[1].value === ''){ //ERRO POR FALTA DE VALOR
                 mostraErro(1, 1);
                 estiloErro();
             };
@@ -70,7 +72,7 @@ function verificaErro(){ //CHAMADA AO CLICAR NO BOTÃO PARA VERIFICAR SE HÁ ALG
                 mostraErro(2, 2);
                 estiloErro();
             }
-            else if(inputsData[2].value === 0){
+            else if(inputsData[2].value === 0 || inputsData[2].value === ''){
                 mostraErro(1, 2);
                 estiloErro();
             };
@@ -99,14 +101,10 @@ function mostraErro(tpErro, idxErro){ //É CHAMADA NA FUNÇÃO 'verificaErro' PA
     else if(tpErro === 2){
         erroInvalido[idxErro].style.display = 'block';
     }
-    else{
-        erroDtInexistente.style.display = 'block';
-    };
 };
 
-function removeErro(){ //CHAMADA AO CLICAR NO BOTÃO PARA REMOVER AS MENSAGENS DE ERRO POR INVALIDEZ
+function estiloErro(){ //CHAMADA SEMPRE QUE HOUVER UM ERRO PARA ESTILIZAR COM O PADRÃO DE ERRO TODOS OS ELEMENTOS
     for(let i = 0; i < inputsData.length; i++){
-        erroInvalido[i].style.display = 'none';
-        erroFalta[i].style.display = 'none';
+        inputsData[i].classList.add = 'erro';
     };
 };
