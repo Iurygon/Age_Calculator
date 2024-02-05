@@ -30,6 +30,10 @@ body{
     align-items: center;
 }
 
+.form__inputs_erro{
+    padding-bottom: 25px;
+}
+
 .form__label{
     font-size: 18px;
     font-weight: 600;
@@ -68,6 +72,7 @@ body{
     color: var(--vermelho__claro);
     margin-top: 10px;
     display: none;
+    position: absolute;
 }
 
 .erro{

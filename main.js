@@ -5,6 +5,7 @@ let inputsLabel = document.querySelectorAll('.form__label');
 const erroFalta = document.querySelectorAll('.input__erro_falta'); 
 const erroInvalido = document.querySelectorAll('.input__erro_invalido');
 const erroDtInexistente = document.querySelector('.input__erro_inexistente');
+const formInput = document.querySelector('.form__inputs');
 /*IMAGEM*/
 const imgResult = document.querySelector('.divisao__imagem_resultado');
 /*MOSTRADOR RESULTADOS (0 - DIA, 1 - MES, 2 - ANO)*/
@@ -34,7 +35,8 @@ function zeraResultados(){ //CHAMADA AO CLICAR NO BOTÃO PARA ZERAR OS VALORES E
 
 function removeEstiloErro(){ //CHAMADA AO CLICAR NO BOTÃO PARA REMOVER O ESTILO DE ERRO DOS INPUTS
     for(let i = 0; i < inputsData.length; i++){
-        inputsData[i].classList.remove = 'erro'
+        inputsData[i].classList.remove('erro');
+        formInput.classList.remove('form__inputs_erro');
     };
 };
 
@@ -52,7 +54,7 @@ function verificaErro(){ //CHAMADA AO CLICAR NO BOTÃO PARA VERIFICAR SE HÁ ALG
                 mostraErro(2, 0);
                 estiloErro();
             }
-            else if(inputsData[0].value === 0 || inputsData[0].value === ''){ //ERRO POR FALTA DE VALOR
+            else if(inputsData[0].value == 0 || inputsData[0].value === ''){ //ERRO POR FALTA DE VALOR
                 mostraErro(1, 0);
                 estiloErro();
             };
@@ -62,7 +64,7 @@ function verificaErro(){ //CHAMADA AO CLICAR NO BOTÃO PARA VERIFICAR SE HÁ ALG
                 mostraErro(2, 1);
                 estiloErro();
             }
-            else if(inputsData[1].value === 0 || inputsData[1].value === ''){ //ERRO POR FALTA DE VALOR
+            else if(inputsData[1].value == 0 || inputsData[1].value === ''){ //ERRO POR FALTA DE VALOR
                 mostraErro(1, 1);
                 estiloErro();
             };
@@ -72,7 +74,7 @@ function verificaErro(){ //CHAMADA AO CLICAR NO BOTÃO PARA VERIFICAR SE HÁ ALG
                 mostraErro(2, 2);
                 estiloErro();
             }
-            else if(inputsData[2].value === 0 || inputsData[2].value === ''){
+            else if(inputsData[2].value == 0 || inputsData[2].value === ''){
                 mostraErro(1, 2);
                 estiloErro();
             };
@@ -105,6 +107,7 @@ function mostraErro(tpErro, idxErro){ //É CHAMADA NA FUNÇÃO 'verificaErro' PA
 
 function estiloErro(){ //CHAMADA SEMPRE QUE HOUVER UM ERRO PARA ESTILIZAR COM O PADRÃO DE ERRO TODOS OS ELEMENTOS
     for(let i = 0; i < inputsData.length; i++){
-        inputsData[i].classList.add = 'erro';
+        inputsData[i].classList.add('erro');
+        formInput.classList.add('form__inputs_erro')
     };
 };
