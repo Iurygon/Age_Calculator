@@ -83,16 +83,17 @@ function verificaErro(){ //CHAMADA AO CLICAR NO BOTÃO PARA VERIFICAR SE HÁ ALG
 };
 
 function verificaData(dd, mm, aa){
-    let dtNascimento = new Date(aa, mm, dd);
-    let tempoRestante = dataAtual - dtNascimento;
+    let dtNascimento = new Date(aa, mm - 1, dd);
+    let tempoRestante = Math.floor((dataAtual.getTime() - dtNascimento.getTime()) / (1000 * 60 * 60 * 24));
     /*ESPECIFICAÇÕES DAS DATAS*/
-    let resultAno = Math.floor(tempoRestante % ( 1000 * 60 * 60 * 24 * 365));
-    let resultMes = Math.floor(tempoRestante  % ( 1000 * 60 * 60 * 24 * 365) / (1000 * 60 * 60 * 24 * 30.11));
-    let resultDia = Math.floor(tempoRestante % ( 1000 * 60 * 60 * 24 * 30.11) / (1000 * 60 * 60 * 24));
+    let resultAno = Math.floor(tempoRestante / (365.24));
+    let resultMes = Math.floor((tempoRestante % (365.24)) / (30.44));
+    let resultDia = Math.floor((tempoRestante % (30.44)))
     /*ATRIBUI AS DATAS*/
-    resultados[0].innerHTML = resultDia;
+    resultados[0].innerHTML = resultAno;
     resultados[1].innerHTML = resultMes;
-    resultados[2].innerHTML = resultAno;
+    resultados[2].innerHTML = resultDia;
+    console.log(dtNascimento.getTime(), dataAtual.getTime(),  tempoRestante);
 }
 
 function mostraErro(tpErro, idxErro){ //É CHAMADA NA FUNÇÃO 'verificaErro' PARA APRESENTAR A MENSAGEM DE ERRO CORRESPONDENTE
