@@ -4,8 +4,8 @@ O projeto consiste em uma calculadora de idades, que recebe a data de nascimento
 
 ## Screenshots
 
-![Imagem do Projeto](Imagens/Projeto_Imagem_One.png)
-![Imagem do Projeto](Imagens/Projeto_Imagem_Two.png)
+![Imagem do Projeto](Imagens/Imagem_Projeto_One.png)
+![Imagem do Projeto](Imagens/Imagem_Projeto_Two.png)
 
 ## Dificuldades
 
